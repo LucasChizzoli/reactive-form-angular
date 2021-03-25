@@ -1,0 +1,9 @@
+@import "../colors";
+
+.main-wrapper {
+  align-items: center;
+  background-color: $grey-light;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
