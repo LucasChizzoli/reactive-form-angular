@@ -1,0 +1,50 @@
+<div class="login-wrapper">
+  <h3 class="login-form-title">LOGIN</h3>
+  <form class="login-form" [formGroup]="loginForm">
+    <div>
+      <label>
+        <span class="form-label">Email</span>
+        <input type="email" class="form-input" formControlName="email" required>
+      </label>
+      <div
+        *ngIf="loginForm.get('email')?.invalid &&
+        (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+        <p class="form-error" *ngIf="loginForm.get('email')?.errors?.required">
+          Email is required.
+        </p>
+        <p class="form-error" *ngIf="loginForm.get('email')?.errors?.email">
+          Email is not valid.
+        </p>
+      </div>
+    </div>
+    <div>
+      <label>
+        <span class="form-label">Password</span>
+        <input class="form-input" type="password" formControlName="password" required>
+        <a href="#" class="form-link forgot-link">Forgot password?</a>
+      </label>
+      <div
+        *ngIf="loginForm.get('password')?.invalid &&
+          (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+        <p class="form-error" *ngIf="loginForm.get('password')?.errors?.required">
+          Password is required.
+        </p>
+        <p class="form-error" *ngIf="loginForm.get('password')?.errors?.minlength">
+          Password must be at least {{ loginForm.get('password')?.errors?.minlength?.requiredLength }} long.
+        </p>
+      </div>
+    </div>
+    <div class="actions-wrapper">
+      <button
+        class="login-button"
+        type="button"
+        [disabled]="!loginForm.valid"
+        (click)="login()">
+        LOGIN
+      </button>
+    </div>
+  </form>
+  <div class="login-footer">
+    <span>Don't have an account? <a href="#" class="form-link">Register now</a></span>
+  </div>
+</div>
