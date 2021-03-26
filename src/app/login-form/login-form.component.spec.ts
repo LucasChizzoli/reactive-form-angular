@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LoginFormComponent } from './login-form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 describe('LoginFormComponent', () => {
   let component: LoginFormComponent;
@@ -25,5 +25,20 @@ describe('LoginFormComponent', () => {
 
   test('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  test('should have email and password', () => {
+    component.LOGIN_FIELDS = [
+      {
+        name: 'email',
+        validators: [Validators.email, Validators.required]
+      },
+      {
+        name: 'password',
+        validators: [Validators.required, Validators.minLength(8)]
+      },
+    ];
+    fixture.detectChanges();
+    expect(component).toMatchSnapshot();
   });
 });
