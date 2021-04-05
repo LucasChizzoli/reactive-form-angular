@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LoginFormComponent } from './login-form.component';
 import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormContainerComponent } from '../form-container/form-container.component';
+import { FormManagerComponent } from '../form-manager.component';
 
 describe('LoginFormComponent', () => {
   let component: LoginFormComponent;
@@ -12,7 +14,7 @@ describe('LoginFormComponent', () => {
         FormsModule,
         ReactiveFormsModule
       ],
-      declarations: [ LoginFormComponent ]
+      declarations: [ LoginFormComponent, FormContainerComponent, FormManagerComponent  ]
     })
     .compileComponents();
   });
@@ -28,7 +30,7 @@ describe('LoginFormComponent', () => {
   });
 
   test('should have email and password', () => {
-    component.LOGIN_FIELDS = [
+    component.fields = [
       {
         name: 'email',
         validators: [Validators.email, Validators.required]

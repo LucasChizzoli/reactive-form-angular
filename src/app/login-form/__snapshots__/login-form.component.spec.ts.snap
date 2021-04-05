@@ -2,7 +2,22 @@
 
 exports[`LoginFormComponent should have email and password 1`] = `
 LoginFormComponent {
-  "LOGIN_FIELDS": Array [
+  "FIELDS": Array [
+    Object {
+      "name": "email",
+      "validators": Array [
+        [Function],
+        [Function],
+      ],
+    },
+    Object {
+      "name": "password",
+      "validators": Array [
+        [Function],
+      ],
+    },
+  ],
+  "fields": Array [
     Object {
       "name": "email",
       "validators": Array [
@@ -18,7 +33,7 @@ LoginFormComponent {
       ],
     },
   ],
-  "loginForm": FormGroup {
+  "form": FormGroup {
     "_composedAsyncValidatorFn": null,
     "_composedValidatorFn": null,
     "_hasOwnPendingAsyncValidator": false,
@@ -34,19 +49,15 @@ LoginFormComponent {
         "_hasOwnPendingAsyncValidator": false,
         "_onChange": Array [
           [Function],
-          [Function],
         ],
         "_onCollectionChange": [Function],
         "_onDisabledChange": Array [
-          [Function],
           [Function],
         ],
         "_parent": [Circular],
         "_pendingValue": "",
         "_rawAsyncValidators": null,
         "_rawValidators": Array [
-          [Function],
-          [Function],
           [Function],
           [Function],
         ],
@@ -82,20 +93,15 @@ LoginFormComponent {
         "_hasOwnPendingAsyncValidator": false,
         "_onChange": Array [
           [Function],
-          [Function],
         ],
         "_onCollectionChange": [Function],
         "_onDisabledChange": Array [
-          [Function],
           [Function],
         ],
         "_parent": [Circular],
         "_pendingValue": "",
         "_rawAsyncValidators": null,
         "_rawValidators": Array [
-          [Function],
-          [Function],
-          [Function],
           [Function],
         ],
         "errors": Object {
@@ -152,7 +158,9 @@ LoginFormComponent {
       "thrownError": null,
     },
   },
-  "loginSubmit": EventEmitter_ {
+  "getErrorMessage": [Function],
+  "getType": [Function],
+  "submitted": EventEmitter_ {
     "__isAsync": false,
     "_isScalar": false,
     "closed": false,

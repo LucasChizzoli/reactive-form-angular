@@ -1,16 +1,16 @@
-<div class="login-wrapper">
-  <h3 class="login-form-title">LOGIN</h3>
-  <form class="login-form" [formGroup]="loginForm">
-    <div *ngFor="let control of LOGIN_FIELDS">
+<app-form-container formTitle="LOGIN PASSWORD">
+  <form class="login-form" [formGroup]="form">
+    <div *ngFor="let control of FIELDS">
       <label>
-        <span class="form-label">{{control.name | titlecase}}</span>
-        <input [type]="getType(control)" class="form-input" [formControlName]="control.name" required>
+        <span class="form-label">{{control.display || control.name | titlecase}}</span>
+        <input [type]="getType(control)" class="form-input" [formControlName]="control.name">
+        <a *ngIf="(control.name | lowercase) === 'password'" href="#" class="form-link forgot-link">Forgot password?</a>
       </label>
       <div
-        *ngIf="loginForm.get(control.name)?.invalid &&
-        (loginForm.get(control.name)?.dirty || loginForm.get(control.name)?.touched)">
-        <p class="form-error" *ngIf="loginForm.get(control.name)?.errors">
-          {{getErrorMessage(control)}}
+        *ngIf="form.get(control.name)?.invalid &&
+        (form.get(control.name)?.dirty || form.get(control.name)?.touched)">
+        <p class="form-error" *ngIf="form.get(control.name)?.errors">
+          {{getErrorMessage(control, form)}}
         </p>
       </div>
     </div>
@@ -18,8 +18,7 @@
       <button
         class="login-button"
         type="button"
-        [disabled]="!loginForm.valid"
-        (click)="login()">
+        (click)="submit()">
         LOGIN
       </button>
     </div>
@@ -27,4 +26,4 @@
   <div class="login-footer">
     <span>Don't have an account? <a href="#" class="form-link">Register now</a></span>
   </div>
-</div>
+</app-form-container>

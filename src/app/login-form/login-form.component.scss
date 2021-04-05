@@ -1,75 +1,65 @@
 @import "./colors";
 
-.login-wrapper {
-  min-width: 400px;
+.form-label {
+  display: block;
+  margin-top: 2rem;
+}
 
-  .login-form-title {
-    font-size: 2rem;
-    text-align: center;
-    margin: 0;
-  }
+.form-input {
+  background-color: $grey-light;
+  border: 1px solid $grey-dark;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
 
-  .form-label {
-    display: block;
-    margin-top: 2rem;
-  }
+.form-error {
+  color: $warn;
+  margin: 0.5rem 0;
+}
 
-  .form-input {
-    background-color: $grey-light;
-    border: 1px solid $grey-dark;
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
+.actions-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
+  .login-button {
+    background-color: $primary;
+    border: none;
+    color: $white;
+    height: 40px;
     padding: 0.5rem;
-    margin-top: 0.5rem;
     width: 100%;
   }
 
-  .form-error {
-    color: $warn;
-    margin: 0.5rem 0;
+  .login-button:hover {
+    background-color: $secondary-dark;
+    cursor: pointer;
   }
+}
 
-  .actions-wrapper {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+.login-footer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem
+}
 
-    .login-button {
-      background-color: $primary;
-      border: none;
-      color: $white;
-      height: 40px;
-      padding: 0.5rem;
-      width: 100%;
-    }
+.form-link {
+  color: $primary;
+  text-decoration: none;
+}
 
-    .login-button:hover {
-      background-color: $secondary-dark;
-      cursor: pointer;
-    }
-  }
+.form-link:hover {
+  text-decoration: underline;
+}
 
-  .login-footer {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem
-  }
-
-  .form-link {
-    color: $primary;
-    text-decoration: none;
-  }
-
-  .form-link:hover {
-    text-decoration: underline;
-  }
-
-  .forgot-link {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 0.5rem;
-  }
+.forgot-link {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
 }
