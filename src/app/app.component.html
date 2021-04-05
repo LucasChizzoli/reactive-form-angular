@@ -1,5 +1,26 @@
 <div class="main-wrapper">
-  <app-card>
-    <app-login-form></app-login-form>
-  </app-card>
+  <div class="row-wrapper">
+    <div class="row-item">
+      <app-card>
+        <app-login-form (submitted)="loginSubmitted($event)"></app-login-form>
+      </app-card>
+    </div>
+    <div class="row-item">
+    <app-card>
+      <app-register-form (submitted)="registerSubmitted($event)"></app-register-form>
+    </app-card>
+    </div>
+  </div>
+  <div class="row-wrapper">
+    <div class="row-item">
+    <app-card>
+      <app-reset-password (submitted)="resetPasswordSubmitted($event)"></app-reset-password>
+    </app-card>
+    </div>
+    <div class="row-item">
+    <app-card>
+      <app-change-password (submitted)="changePasswordSubmitted($event)"></app-change-password>
+    </app-card>
+    </div>
+  </div>
 </div>

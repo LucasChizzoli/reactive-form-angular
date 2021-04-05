@@ -4,6 +4,11 @@ import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { CardComponent } from './card/card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterFormComponent } from './register-form/register-form.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ResetPasswordComponent } from './restore-password/reset-password.component';
+import { FormManagerComponent } from './form-manager.component';
+import { FormContainerComponent } from './form-container/form-container.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -16,7 +21,12 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         LoginFormComponent,
-        CardComponent
+        CardComponent,
+        RegisterFormComponent,
+        ChangePasswordComponent,
+        ResetPasswordComponent,
+        FormManagerComponent,
+        FormContainerComponent,
       ],
     }).compileComponents();
   });
