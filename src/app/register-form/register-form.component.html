@@ -1,0 +1,28 @@
+<app-form-container formTitle="REGISTER">
+  <form [formGroup]="form">
+    <div *ngFor="let control of fields">
+      <label>
+        <span class="form-label">{{control.display || control.name | titlecase}}</span>
+        <input [type]="getType(control)" class="form-input" [formControlName]="control.name">
+      </label>
+      <div
+        *ngIf="form.get(control.name)?.invalid &&
+        (form.get(control.name)?.dirty || form.get(control.name)?.touched)">
+        <p class="form-error" *ngIf="form.get(control.name)?.errors">
+          {{getErrorMessage(control, form)}}
+        </p>
+      </div>
+    </div>
+    <div class="actions-wrapper">
+      <button
+        class="register-button"
+        type="button"
+        (click)="submit()">
+        REGISTER
+      </button>
+    </div>
+  </form>
+  <div class="register-footer">
+    <span>Already have an account? <a href="#" class="form-link">Login now</a></span>
+  </div>
+</app-form-container>
